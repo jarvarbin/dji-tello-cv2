@@ -53,3 +53,43 @@ while True:
     else:
       # Stop
       ```
+
+
+
+# dji-tello-cv2 - Python program that uses the DJI Tello drone to dodge objects:
+
+```
+import cv2
+from imutils.video import VideoStream
+from tellopy import Tello
+
+# Set the speed and distance of the drone
+speed = 10
+distance = 10
+
+# Create a Tello object and connect to the drone
+tello = Tello()
+tello.connect()
+tello.for_back_velocity = 0
+tello.left_right_velocity = 0
+tello.up_down_velocity = 0
+tello.yaw_velocity = 0
+tello.speed = 0
+
+# Start the video stream
+vs = VideoStream(src=0).start()
+
+# Loop until the user presses a key
+while True:
+  # Get the frame from the video stream
+  frame = vs.read()
+
+  # Convert the frame to grayscale
+  gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+  # Detect edges in the frame using the Canny algorithm
+  edges = cv2.Canny(gray, 100, 200)
+
+  # Find the contours in the frame
+  _, contours, _ = cv2.findContours
+  ```
