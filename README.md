@@ -2,7 +2,6 @@
 Here is a simple example of how to write a Python program that uses the DJI Tello drone to track and follow people:
 
 ```
-
 import cv2
 from imutils.video import VideoStream
 from tellopy import Tello
@@ -52,7 +51,7 @@ while True:
       tello.yaw_velocity = 0
     else:
       # Stop
-      ```
+```
 
 
 
@@ -92,4 +91,4 @@ while True:
 
   # Find the contours in the frame
   _, contours, _ = cv2.findContours
-  ```
+```
